@@ -8,13 +8,34 @@
  * * maxBy(): Return the element where the callback function on that element yields the highest value
  */
 
+// try to find the index of the object that matches the criteria and then use that index to return the object 
+// from the array, // forEach 
+
 export function minBy(array, cb) {
   // Your code goes here...
 
+  let minElement = array[0];
+
+  array.forEach(element => {
+    if (cb(element) < cb(minElement)) {
+      minElement = element;
+    }
+  });
+
+  return minElement;
 }
 
 export function maxBy(array, cb) {
   // Your code goes here...
+  let maxElement = array[0];
+
+  array.forEach(element => {
+    if (cb(element) > cb(maxElement)) {
+      maxElement = element;
+    }
+  });
+
+  return maxElement;
 
 }
 
