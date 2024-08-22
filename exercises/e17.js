@@ -13,7 +13,6 @@
 
 export function minBy(array, cb) {
   // Your code goes here...
-
   let minElement = array[0];
 
   array.forEach(element => {
@@ -27,7 +26,7 @@ export function minBy(array, cb) {
 
 export function maxBy(array, cb) {
   // Your code goes here...
-  let maxElement = array[0];
+     let maxElement = array[0];
 
   array.forEach(element => {
     if (cb(element) > cb(maxElement)) {
@@ -36,7 +35,6 @@ export function maxBy(array, cb) {
   });
 
   return maxElement;
-
 }
 
 
