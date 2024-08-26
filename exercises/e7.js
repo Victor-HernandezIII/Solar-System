@@ -6,10 +6,12 @@ import { data } from "../data/data";
 
 export function getPlanetsNamesWithMoons(data) {
   // Your code goes here...
-const moonPlanets = data.planets
-      .filter(planet => {return planet.moons != undefined})
-      .map(planet => {return planet.name});
-  return moonPlanets;    
+  return data.planets.reduce((acc, planet) => {
+    if (planet.moons != undefined) {
+      acc.push(planet.name)
+    }
+    return acc;
+  }, []);    
 }
 
 

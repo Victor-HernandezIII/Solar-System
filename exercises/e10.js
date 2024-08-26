@@ -6,9 +6,12 @@ import { data } from "../data/data";
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
-  const roidName = data.asteroids
-    .filter(asteroid => {return asteroid.name == asteroidName});
-return roidName[0];
+ return data.asteroids.reduce((acc, asteroid) => {
+    if (asteroid.name === asteroidName) {
+      acc.push(asteroid);
+    }
+    return acc;
+  }, [])[0];
 }
 
 

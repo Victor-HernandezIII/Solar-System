@@ -6,9 +6,12 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   // Your code goes here...
-  const earth = data.planets
-    .filter(planet => {return planet.name == 'Earth'})
-  return earth[0];
+  return data.planets.reduce((acc, planet) => {
+    if(planet.name === 'Earth') {
+      acc.push(planet)
+    }
+    return acc;
+  }, [])[0];
 }
 
 
